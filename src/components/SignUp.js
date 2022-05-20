@@ -47,7 +47,7 @@ const Signup = () => {
       setCpasserrormsg("Confirm Password is Required");
     if (pass !== cpass)
       setCpasserrormsg("Password and Confirm Password must be same");
-    if((emailerrormsg.length>0) || (passerrormsg.length>0) || (cpasserrormsg.length>0))
+    if((emailerrormsg.length===0) && (passerrormsg.length===0) && (cpasserrormsg.length===0))
     handleSignup();
 
   }
