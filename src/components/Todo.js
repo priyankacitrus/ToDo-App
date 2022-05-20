@@ -122,7 +122,6 @@ const Todo = ({ todo, setRemove, setComplete }) => {
 
   //delete icon action
   const removetodo = () => {
-    const uid=todo.uid;
     setDeletealert(false);
     remove(ref(db, `/${auth.currentUser.uid}/${todo.userId}`));
     setDeletealert(deletealert=true);

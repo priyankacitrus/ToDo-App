@@ -13,7 +13,7 @@ import Todo from "./Todo";
 import { uid } from "uid";
 import {db} from "./firebase.js";
 import {auth} from "./firebase";
-import {ref, onValue, push, set} from "firebase/database";
+import {ref, onValue, set} from "firebase/database";
 import { useNavigate, useParams } from "react-router-dom";
 import LogoutIcon from '@mui/icons-material/Logout';
 import { signOut } from "firebase/auth";
@@ -21,6 +21,9 @@ import { signOut } from "firebase/auth";
 
 const AddTodo = () => {
  
+  //Get name of user
+  let name=useParams();
+  const myName = name.curr.split("@");
 
    let navigate = useNavigate();
   var newArr = [{}];
@@ -126,7 +129,10 @@ const AddTodo = () => {
             </IconButton>
 
         <form>
-          <Typography variant="h4" component="h2" style={{ padding: "10px", color: "blue", fontFamily: "sans-serif" }}>
+        <Typography variant="h4" component="h2" style={{ padding: "10px", fontFamily: "sans-serif" }}>
+           Welcome {myName[0].toUpperCase()} 
+          </Typography>
+          <Typography variant="h5" component="h2" style={{ padding: "10px", color: "blue", fontFamily: "sans-serif" }}>
             {day}
           </Typography>
           <Typography variant="h5" component="h2" style={{ padding: "10px", color: "blue", fontFamily: "sans-serif" }}>
