@@ -30,10 +30,6 @@ const Todo = ({ todo, setRemove, setComplete }) => {
   //checkbox states
   var [check, setCheck] = useState(false);
 
-  //db reference
-  //const todoref = ref(db,"/Todo/"+todo.id);
-
-console.log("ID",todo.userId);
   //checkbox checking
   const change = () => {
     setCheck(!check);

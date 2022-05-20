@@ -17,14 +17,12 @@ import {ref, onValue, push, set} from "firebase/database";
 import { useNavigate, useParams } from "react-router-dom";
 import LogoutIcon from '@mui/icons-material/Logout';
 import { signOut } from "firebase/auth";
-//import { db } from "./firebase.js";
+
 
 const AddTodo = () => {
  
 
    let navigate = useNavigate();
-  //db reference
-  const todoRef = ref(db,"/Todo");
   var newArr = [{}];
   var newObj = { title: null, status: null, timeTaken: null, createdAt: null, done: null,userId:null };
   const [text, setText] = useState("");
@@ -76,7 +74,7 @@ const AddTodo = () => {
     newObj.createdAt = today;
     newObj.done = false;
     
-
+  //add to firebase db
     if (text !== "") {
       setText("");
       const uidd = uid();
@@ -198,11 +196,8 @@ const AddTodo = () => {
                   setComplete={setComplete}
                 />
                 
-              )
-              )
+              )      )
           }
-
-
         </List>
       )
 

@@ -16,9 +16,6 @@ const Signup = () => {
   var [passerrormsg, setPasserrormsg] = useState("");
   var [cpasserrormsg, setCpasserrormsg] = useState("");
 
-  console.log(email, pass);
- // const [loading, setLoading] = useState(false);
-
   //register new user
   async function handleSignup() {
     try{
